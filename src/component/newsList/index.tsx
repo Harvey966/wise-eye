@@ -1,4 +1,5 @@
-import { View, Text } from "@tarojs/components";
+import { View } from "@tarojs/components";
+import Taro from "@tarojs/taro";
 import "./index.scss";
 
 const listMock = [
@@ -16,12 +17,17 @@ const listMock = [
   },
 ];
 
-function NewsList() {
+const NewsList = () => {
+  function handleClick() {
+    Taro.navigateTo({
+      url:"/pages/article/index.tsx"
+    })
+  }
   return (
     <View className="list">
       {listMock.map((v, index) => {
         return (
-          <View className="item" key={index}>
+          <View className="item" key={index} onClick={handleClick}>
             <View className="number">{index + 1}</View>
             <View className="title">{v.title}</View>
           </View>
