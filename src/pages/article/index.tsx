@@ -1,5 +1,5 @@
 import { View } from "@tarojs/components";
-import Taro from "@tarojs/taro";
+// import Taro from "@tarojs/taro";
 import "./index.scss";
 
 const listMock = {
