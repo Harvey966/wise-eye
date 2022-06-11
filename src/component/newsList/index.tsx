@@ -20,8 +20,8 @@ const listMock = [
 const NewsList = () => {
   function handleClick() {
     Taro.navigateTo({
-      url:"/pages/article/index.tsx"
-    })
+      url: "/pages/article/index",
+    });
   }
   return (
     <View className="list">
@@ -35,5 +35,5 @@ const NewsList = () => {
       })}
     </View>
   );
-}
+};
 export default NewsList;
