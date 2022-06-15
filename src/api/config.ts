@@ -1,6 +1,7 @@
 import { axios, AxiosInstance, AxiosRequestConfig } from "taro-axios";
 
-const baseURL = "http://106.13.8.36/api";
+/* const baseURL = "http://106.13.8.36/api"; */
+const baseURL = "localhost:3333";
 
 const createAxiosByinterceptors = (
   config?: AxiosRequestConfig
