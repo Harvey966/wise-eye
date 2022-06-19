@@ -1,5 +1,5 @@
 import { View } from "@tarojs/components";
-// import Taro from "@tarojs/taro";
+import { AtIcon } from "taro-ui";
 import "./index.scss";
 
 const listMock = {
@@ -10,16 +10,12 @@ const listMock = {
 
 const Article = () => {
   return (
-    <View className="list">
-      {listMock.title}
-      {/*  {listMock.map((v, index) => {
-        return (
-          <View className="item" key={index} onClick={handleClick}>
-            <View className="number">{index + 1}</View>
-            <View className="title">{v.title}</View>
-          </View>
-        );
-      })} */}
+    <View className="main">
+      <AtIcon value='play' size='50' color='#C1C1C1' className="main__icon"></AtIcon>
+      <View className="main__title">
+        {listMock.title}
+      </View>
+      <View main__content>{listMock.content}</View>
     </View>
   );
 };

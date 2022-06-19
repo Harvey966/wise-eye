@@ -1,6 +1,21 @@
 .home {
+  &__view {
+    position: sticky;
+  }
   &__footer {
     position: absolute;
     bottom: 0;
+  }
+  &__icon {
+    margin-top: 17px;
+    padding-bottom: 10px;
+    display: block;
+    border-bottom: 1px solid #EDF3F8;
+    border-image: linear-gradient( to bottom,transparent  50%,#EDF3F8 50%) 0 0 100% 0 ;
+    position: absolute;
+    bottom: 0;
+  }
+  &__search {
+    border-bottom: none;
   }
 }
