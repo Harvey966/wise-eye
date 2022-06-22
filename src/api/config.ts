@@ -1,7 +1,7 @@
 import { axios, AxiosInstance, AxiosRequestConfig } from "taro-axios";
 
 /* const baseURL = "http://106.13.8.36/api"; */
-const baseURL = "localhost:3333";
+const baseURL = "http://localhost:3333";
 
 const createAxiosByinterceptors = (
   config?: AxiosRequestConfig
@@ -28,6 +28,7 @@ const createAxiosByinterceptors = (
 
   // 添加响应拦截器
   instance.interceptors.response.use((response) => {
+    console.log(response);
     // 对响应数据做点什么
     return response.data;
   });
