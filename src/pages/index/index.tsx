@@ -10,7 +10,7 @@ function Index() {
   const [value, setValue] = useState("");
   const [visible, setVisible] = useState(false);
   const [current, setCurrent] = useState(0);
-  const changeSearch = (e) => {
+  const changeSearch = e => {
     console.log(e);
   };
   /* useEffect(() => {
@@ -22,8 +22,7 @@ function Index() {
         console.log("请求失败", err);
       });
   }); */
-  function handleClick(index) {
-    console.log(index);
+  function changeTab(index) {
     setCurrent(index);
   }
   return (
@@ -65,9 +64,9 @@ function Index() {
           className="home__footer"
           tabList={[
             { title: "首页", iconType: "home", text: "100", max: 99 },
-            { title: "个人主页", iconType: "user", text: "new" },
+            { title: "个人主页", iconType: "user", text: "new" }
           ]}
-          onClick={handleClick.bind(this)}
+          onClick={changeTab.bind(this)}
           current={current}
         />
       )}

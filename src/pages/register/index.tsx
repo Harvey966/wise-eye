@@ -14,23 +14,21 @@ export default function Register() {
     let value = {
       username: username,
       password: password,
-      confirmPwd: confirmPwd
+      confirmPwd: confirmPwd,
     };
     console.log(value);
     console.log(rule);
     if (rule.checkData(value)) {
-      console.log(1);
       register(value)
-      .then((res) => {
-        console.log("请求结果", res);
-      })
-      .catch((err) => {
-        console.log("请求失败", err);
-      });
+        .then((res) => {
+          console.log("请求结果", res);
+        })
+        .catch((err) => {
+          console.log("请求失败", err);
+        });
     } else {
       console.log(2);
     }
-    if (!rule.checkData(value)) return;
   }
   function handleClick() {
     Taro.navigateTo({
@@ -58,16 +56,16 @@ export default function Register() {
       username: {
         required: "请输入用户名",
         minlength: "用户名过短，长度应为6-16位",
-        maxlength: "用户名过长，长度应为6-16位"
+        maxlength: "用户名过长，长度应为6-16位",
       },
       password: {
         required: "请输入密码",
         minlength: "密码过短，长度应为6-16位",
-        maxlength: "密码过长，长度应为6-16位"
+        maxlength: "密码过长，长度应为6-16位",
       },
       confirmPwd: {
         required: "请输入确认密码",
-        equalTo: '密码与确认密码不一致'
+        equalTo: "密码与确认密码不一致",
       },
     },
   });

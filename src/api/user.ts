@@ -1,8 +1,12 @@
 import { request } from "./config";
 
 // 登陆
-export const login = () => {
-  return request.get("/api/user/login");
+export const login = async (params) => {
+  const res = await request.post("/api/user/login", params);
+  if (res.data.token) {
+    window.localStorage.setItem("jwt", res.data.token);
+  }
+  Promise.resolve(res);
 };
 
 // 注册
