@@ -2,7 +2,6 @@ import { View } from "@tarojs/components";
 import { useState, useEffect } from "react";
 import { AtIcon, AtSearchBar, AtTabBar } from "taro-ui";
 import "./index.scss";
-import { login } from "../../api/user";
 import HomePage from "../home-page";
 import UseInfo from "../user-info";
 
@@ -10,7 +9,7 @@ function Index() {
   const [value, setValue] = useState("");
   const [visible, setVisible] = useState(false);
   const [current, setCurrent] = useState(0);
-  const changeSearch = e => {
+  const changeSearch = (e) => {
     console.log(e);
   };
   /* useEffect(() => {
@@ -64,7 +63,7 @@ function Index() {
           className="home__footer"
           tabList={[
             { title: "首页", iconType: "home", text: "100", max: 99 },
-            { title: "个人主页", iconType: "user", text: "new" }
+            { title: "个人主页", iconType: "user", text: "new" },
           ]}
           onClick={changeTab.bind(this)}
           current={current}
