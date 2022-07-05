@@ -3,7 +3,7 @@
     position: sticky;
   }
   &__footer {
-    position: absolute;
+    position: sticky !important;
     bottom: 0;
   }
   &__icon {

@@ -2,32 +2,23 @@ import { View } from "@tarojs/components";
 import Taro from "@tarojs/taro";
 import "./index.scss";
 
-const listMock = [
-  {
-    title: "媒体评宾利车位风波：已成反腐线索",
-  },
-  {
-    title: "媒体评宾利车位风波：已成反腐线索",
-  },
-  {
-    title: "媒体评宾利车位风波：已成反腐线索",
-  },
-  {
-    title: "媒体评宾利车位风波：已成反腐线索",
-  },
-];
-
-const NewsList = () => {
-  function handleClick() {
+const NewsList = (props) => {
+  function handleClick(item) {
     Taro.navigateTo({
-      url: "/pages/article/index",
+      url: `/pages/article/index?article=` + JSON.stringify(item),
     });
   }
   return (
     <View className="list">
-      {listMock.map((v, index) => {
+      {props.dataList.map((v, index) => {
         return (
-          <View className="item" key={index} onClick={handleClick}>
+          <View
+            className="item"
+            key={v.article_id}
+            onClick={() => {
+              handleClick(v);
+            }}
+          >
             <View className="number">{index + 1}</View>
             <View className="title">{v.title}</View>
           </View>

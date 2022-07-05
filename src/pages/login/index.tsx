@@ -5,7 +5,7 @@ import { useRef, useState, useEffect } from "react";
 import WeValidator from "we-validator";
 import { login } from "../../api/user";
 import { textToVoice, imageToText } from "../../api/ai";
-import { testList } from "../../api/article";
+// import { testList } from "../../api/article";
 
 import "./index.scss";
 
@@ -87,13 +87,13 @@ export default function Login() {
       });
   };
   const testJWT = () => {
-    testList()
-      .then((res) => {
-        console.log("res", res);
-      })
-      .catch((err) => {
-        console.log("err", err);
-      });
+    // testList()
+    //   .then((res) => {
+    //     console.log("res", res);
+    //   })
+    //   .catch((err) => {
+    //     console.log("err", err);
+    //   });
   };
   function onWebLoad(e) {
     console.log("webview e", e);

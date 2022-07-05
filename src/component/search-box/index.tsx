@@ -1,9 +1,8 @@
 import { View } from "@tarojs/components";
-import { useState, useEffect } from "react";
-import { AtSearchBar, AtTabBar } from "taro-ui";
-import "./index.scss";
-import NewsList from "../../component/news-list";
 import Taro from "@tarojs/taro";
+import { useState } from "react";
+import { AtSearchBar } from "taro-ui";
+import "./index.scss";
 
 export default function SearchBox() {
   const [value, setValue] = useState("");
@@ -17,7 +16,13 @@ export default function SearchBox() {
   }
   return (
     <View>
-      <AtSearchBar className="fix" showActionButton value={value} onChange={changeSearch} onFocus={handleFocus} />
+      <AtSearchBar
+        className="fix"
+        showActionButton
+        value={value}
+        onChange={changeSearch}
+        onFocus={handleFocus}
+      />
     </View>
   );
-};
+}

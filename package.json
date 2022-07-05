@@ -45,7 +45,6 @@
     "js-base64": "^3.7.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "recorder-core": "^1.2.22062800",
     "taro-axios": "^1.1.1",
     "taro-ui": "3.0.0-alpha.3",
     "we-validator": "^2.1.16"

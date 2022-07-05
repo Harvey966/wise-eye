@@ -1,5 +1,5 @@
 import { View } from "@tarojs/components";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { AtIcon, AtSearchBar, AtTabBar } from "taro-ui";
 import "./index.scss";
 import HomePage from "../home-page";
@@ -12,15 +12,6 @@ function Index() {
   const changeSearch = (e) => {
     console.log(e);
   };
-  /* useEffect(() => {
-    login()
-      .then((res) => {
-        console.log("请求结果", res);
-      })
-      .catch((err) => {
-        console.log("请求失败", err);
-      });
-  }); */
   function changeTab(index) {
     setCurrent(index);
   }
