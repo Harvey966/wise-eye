@@ -16,14 +16,15 @@ const createAxiosByinterceptors = (
   // 添加请求拦截器
   instance.interceptors.request.use(
     async function (config: any) {
+      // 在请求头中添加jwt
       try {
-        // 在请求头中添加jwt
         const jwt = (await Taro.getStorage({ key: "jwt" })) || null;
         console.log("jwt", jwt);
         if (jwt.data) config.headers.Authorization = jwt.data;
       } catch (err) {
-        console.log("err", err);
+        Promise.resolve(err);
       }
+
       return config;
     },
     function (error) {
@@ -33,11 +34,21 @@ const createAxiosByinterceptors = (
   );
 
   // 添加响应拦截器
-  instance.interceptors.response.use((response) => {
-    // console.log("response", response);
-    // 对响应数据做点什么
-    return response.data;
-  });
+  instance.interceptors.response.use(
+    (response) => {
+      // console.log("response", response);
+      // 对响应数据做点什么
+      return response.data;
+    },
+    (err) => {
+      if (err.response.status === 401) {
+        console.log("登陆信息失效");
+        Taro.reLaunch({
+          url: "/pages/login/index",
+        });
+      }
+    }
+  );
   return instance;
 };
 export const request = createAxiosByinterceptors({ baseURL });

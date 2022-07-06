@@ -1,9 +1,15 @@
 import { View } from "@tarojs/components";
 import Taro from "@tarojs/taro";
+import { addClickLog } from "../../api/user";
 import "./index.scss";
 
 const NewsList = (props) => {
-  function handleClick(item) {
+  async function handleClick(item) {
+    const res = await addClickLog({
+      click_article_id: item.article_id,
+      click_timestamp: new Date().getTime(),
+    });
+    console.log("res返回", res);
     Taro.navigateTo({
       url: `/pages/article/index?article=` + JSON.stringify(item),
     });

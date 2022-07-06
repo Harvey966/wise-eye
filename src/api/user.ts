@@ -9,6 +9,9 @@ export const login = async (params) => {
       key: "jwt",
       data: res.data.token,
     });
+    Taro.reLaunch({
+      url: "/pages/index/index",
+    });
   }
   return Promise.resolve(res);
 };
@@ -19,6 +22,6 @@ export const register = (params) => {
 };
 
 // 未读消息接口
-export const noticeCount = (params) => {
-  return request.get("leave/count");
+export const addClickLog = (params) => {
+  return request.post("api/user/addClickLog", params);
 };
